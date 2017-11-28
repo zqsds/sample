@@ -29,3 +29,7 @@ Route::any('zhaoqiang',array('http',function (){
     echo URL::to('foo');
     return "赵强好帅！！";
 }));
+
+Route::get('login','SessionsController@create') -> name('login');
+Route::post('login','SessionsController@store') -> name('login');
+Route::delete('logout','SessionsController@destroy') -> name('logout');
