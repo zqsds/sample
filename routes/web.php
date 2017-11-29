@@ -20,7 +20,6 @@ Route::get('/help', 'StaticPagesController@help') -> name('help');
 Route::get('/about', 'StaticPagesController@about') -> name('about');
 
 Route::get('signup', 'UsersController@create') -> name('signup');
-Route::get('signup', 'UsersController@index') -> name('signup');
 Route::resource('users','UsersController');
 /*Route::get('users/{user}', function (App\Models\User $user) {
     return $user;
@@ -35,3 +34,5 @@ Route::get('login','SessionsController@create') -> name('login');
 Route::post('login','SessionsController@store') -> name('login');
 Route::delete('logout','SessionsController@destroy') -> name('logout');
 Route::get('/users/{user}/edit', 'UsersController@edit') -> name('users.edit');
+
+Route::get('signup/confirm/{token}', 'UsersController@confirmEmail') -> name('confirm_email');
